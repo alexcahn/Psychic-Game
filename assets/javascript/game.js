@@ -31,6 +31,7 @@ document.onkeyup = function (event) {
         Wins++;
         alert("you win!");
         guessesLeft = 9;
+        guessesSoFar = [];
         
     }else if (guessesLeft == 0){
         Losses++
