@@ -26,36 +26,34 @@ document.onkeyup = function (event) {
 
     // Randomly chooses a choice from the lettersGuessed array.
     var psychicLetter = lettersGuessed[Math.floor(Math.random() * lettersGuessed.length)];
-  
+
+    // if you guess a letter you've already guessed, it tell you that you've guessed it
+    if (guessesSoFar.indexOf(userGuess) >=0){
+        alert("you already guessed that!");
+    } else {
+        guessesSoFar.push(userGuess);
+        guessesLeft --;
+    }
+//   if you guess the right letter
     if (userGuess === psychicLetter){
         Wins++;
         alert("you win!");
         guessesLeft = 9;
         guessesSoFar = [];
         
-    }else if (guessesLeft == 0){
+    }else if (guessesLeft === 0){
         Losses++
         guessesLeft = 9;
-    }
-    else{
-        guessesLeft --;
-        guessesSoFar.push(userGuess);
-        yourGuess.textContent = guessesSoFar;
-    }
-
-    if (guessesLeft == 0){
         guessesSoFar = [];
     }
-
-    if (userGuess === guessesSoFar){
-        
-    }
+    
 
     // Display the user and computer guesses, and wins/losses/ties.
     
     guessesLeftText.textContent = guessesLeft;
     WinsText.textContent = Wins;
     LossesText.textContent = Losses;
+    yourGuess.textContent = guessesSoFar;
 
 }
 
