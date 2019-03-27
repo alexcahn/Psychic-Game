@@ -23,6 +23,14 @@ document.onkeyup = function (event) {
     var userGuess = event.key;
     console.log(userGuess);
 
+    // function to restart the game
+    function restart(){
+        if ((userGuess === psychicLetter) || 
+            (guessesLeft === 0));
+            guessesLeft = 9;
+            guessesSoFar = [];
+    }
+
 
     // Randomly chooses a choice from the lettersGuessed array.
     var psychicLetter = lettersGuessed[Math.floor(Math.random() * lettersGuessed.length)];
@@ -40,11 +48,13 @@ document.onkeyup = function (event) {
         alert("you win!");
         guessesLeft = 9;
         guessesSoFar = [];
+        restart();
         
     }else if (guessesLeft === 0){
         Losses++
         guessesLeft = 9;
         guessesSoFar = [];
+        restart();
     }
     
 
