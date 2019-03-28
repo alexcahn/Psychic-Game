@@ -36,6 +36,11 @@ document.onkeyup = function (event) {
     var psychicLetter = lettersGuessed[Math.floor(Math.random() * lettersGuessed.length)];
 
     // if you guess a letter you've already guessed, it tell you that you've guessed it
+if(lettersGuessed.indexOf(userGuess) === -1){
+    alert ("that's not a letter!");
+    return false;
+}
+
     if (guessesSoFar.indexOf(userGuess) >=0){
         alert("you already guessed that!");
     } else {
