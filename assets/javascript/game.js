@@ -31,7 +31,7 @@ document.onkeyup = function (event) {
             (guessesLeft === 0));
         guessesLeft = 9;
         guessesSoFar = [];
-        var psychicLetter = lettersGuessed[Math.floor(Math.random() * lettersGuessed.length)];
+        psychicLetter = lettersGuessed[Math.floor(Math.random() * lettersGuessed.length)];
         console.log(psychicLetter);
     }
 
